@@ -28,6 +28,9 @@ ser = serial.Serial(
 
 display_regex = r"d:\w+"
 
+lcd.clear()
+lcd.message("pi ready")
+
 while True:
     current_message = ser.readline()
     #print current_message
@@ -44,5 +47,5 @@ while True:
     elif re.match(display_regex, current_message):
         lcd.clear()
         lcd.message(current_message[2:])
-    
-    time.sleep(0.5)
+        time.sleep(0.5)
+    time.sleep(0.1)
