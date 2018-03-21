@@ -46,6 +46,6 @@ while True:
     # if a message starts with d: , send this message to the lcd
     elif re.match(display_regex, current_message):
         lcd.clear()
+        lcd.set_cursor(0, 0)
         lcd.message(current_message[2:])
         time.sleep(0.5)
-    time.sleep(0.1)
