@@ -29,7 +29,10 @@ ser = serial.Serial(
 display_regex = r"d:\w+"
 
 lcd.clear()
-lcd.message("pi ready")
+lcd.set_cursor(0, 0)
+lcd.message("pi")
+lcd.set_cursor(1, 0)
+lcd.message("listenin")
 
 while True:
     current_message = ser.readline()
@@ -40,6 +43,7 @@ while True:
     # we know the connection is established, so then just print it to the display
     if current_message == "udooready":
         lcd.clear()
+        lcd.set_cursor(0, 0)
         lcd.message("udoo ready")
         lcd.set_cursor(0, 1)
         lcd.message("pi ready")
