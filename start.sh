@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "script was ran at" > runned.txt
 date >> runned.txt 
-python lcd_from_serial.py
+/usr/bin/python lcd_from_serial.py
